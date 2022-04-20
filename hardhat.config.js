@@ -5,6 +5,9 @@ const privateKey = fs.readFileSync(".secret").toString();
 
 // const projectId = "********************************";
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 module.exports = {
   networks: {
     hardhat: {
@@ -17,7 +20,7 @@ module.exports = {
     mainnet: {
       url: process.env.REACT_APP_INFURA_POLYGON_MAINNET_RPC_URL,
       accounts: [privateKey]
-    }
+    },
   },
   solidity: "0.8.4",
 };
