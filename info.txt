@@ -4,3 +4,5 @@ yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
 yarn add -D dotenv@latest
 
 npx tailwindcss init -p
+
+npx hardhat node # run a local node
