@@ -35,6 +35,7 @@ export default function Home() {
         tokenId: i.tokenId.toNumber(),
         seller: i.seller,
         owner: i.owner,
+        sold: i.sold,
         image: meta.data.image,
         name: meta.data.name,
         description: meta.data.description,
@@ -66,14 +67,14 @@ export default function Home() {
   )
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-left p-6 pt-4">
       <div className="bx-4" style={{ maxWidth: '1600px' }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
 
-                <img src={ nft.image } />
+                <img width="256px" src={ nft.image } />
 
                 <div className="p-4">
                   <p style={{ height: '64px' }} className="text-2xl font-semibold">{ nft.name }</p>
@@ -85,7 +86,7 @@ export default function Home() {
                 <div className="p-4 bg-black">
                   <p className="text-2xl mb-4 font-bold text-white">{ nft.price } MATIC</p>
                   <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
-                    onCLick={ () => buyNft(nft) }>Buy</button>
+                    onClick={ () => buyNft(nft) }>Buy</button>
                 </div>
 
               </div>
