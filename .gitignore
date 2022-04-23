@@ -41,3 +41,4 @@ typechain
 cache
 artifacts
 .secret
+config_local.js

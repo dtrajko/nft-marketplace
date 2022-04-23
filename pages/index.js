@@ -4,7 +4,7 @@ import axios from 'axios'
 import Web3Modal from 'web3modal'
 
 import {
-  nftaddress, nftmarketaddress
+  nftaddress, nftmarketaddress, rpc_url
 } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
@@ -20,7 +20,10 @@ export default function Home() {
   }, [])
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider()
+
+    console.log('Home::loadNFTs rpc_url: ' + rpc_url)
+
+    const provider = new ethers.providers.JsonRpcProvider(rpc_url)
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, provider)
 
