@@ -1,6 +1,3 @@
-// const dotenv = require("dotenv");
-// dotenv.config();
-
 // localhost
 // export const nftaddress = '******************************************' // process.env.NFT_ADDRESS
 // export const nftmarketaddress = '******************************************' // process.env.NFT_MARKET_ADDRESS
